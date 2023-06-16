@@ -2,7 +2,7 @@
 
 `repo-contributor-circles` is an open-source repository that generates GitHub user circles for any given user by leveraging a GitHub Action to run the script. It is based on the [repo-track-pipeline](https://github.com/hooopo/repo-track-pipeline) repo and provides an easy way to sync data from a database, then generate a beautiful circle.png file.
 
-![](https://raw.githubusercontent.com/hooopo/repo-contributor-circles/main/circle.png)
+![](/circle.png)
 
 
 ## Features
