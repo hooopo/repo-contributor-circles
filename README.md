@@ -15,31 +15,58 @@ Key features of **Repo Contributor Circles** include:
 
 **Repo Contributor Circles** presents a novel way to appreciate and highlight the individuals who are shaping your project. Use this tool today to transform your list of contributors into an engaging visualization that tells the story of your repository's community.
 
-## Build your own 
 
-### Prerequisites
+## How to setup "Repo Contributor Circles" for youself
 
-To use `repo-contributor-circles`, you will need the following:
+1. **Fork the repository**: Start by forking this repository to your own GitHub account using the "Fork" button at the top right corner of the repository page.
 
-* GitHub account
-* Database URL for syncing and retrieving data
+2. **Fill secrets for GitHub Actions**: In the "Settings" tab of your forked repository, navigate to "Secrets" and add the following secrets:
 
-### Setup
+   3.1. `REPO_FULL_NAME`: Your target repo fullname, for example: `pingcap/tidb`.
+   
+   3.2. `DATABASE_URL`: Register for TiDB Serverless and get the connection info. You can register here: [TiDB Serverless Registration](https://tidbcloud.com/?utm_source=github_circles&utm_medium=github_circles&utm_campaign=github_circles)
 
-1. **Fork the repo**: Click the "Fork" button in the top-right corner of the `repo-contributor-circles` repo on GitHub.
-2. **Enable GitHub Actions**: Navigate to the "Actions" tab on your forked repo and enable GitHub Actions if it's not already enabled.
-3. **Configure Secrets**: In your forked repo, go to "Settings" > "Secrets" and click "New repository secret". Add the following secret:
+   Format of the connection info: `mysql2://<username>:<password>@<host>:<port>/<database>`
 
-   ```
-   Name: DATABASE_URL
-   Value: your_database_url
-   ```
 
-   Replace `your_database_url` with the actual URL of your database.
+3. **Enable GitHub Actions**: Navigate to the "Actions" tab in your forked repository, and click on the green "I understand my workflows, go ahead and enable them" button to enable GitHub Actions.
 
-4. **Test the Action**: The GitHub Action should run automatically on every push to the repository. You can check the "Actions" tab to see the progress and view detailed logs.
+![image](https://github.com/hooopo/oh-my-github-circles/assets/63877/5b1b31b8-bfc7-416d-917c-8e6403b419ac)
 
-5. **Access the circle.png file**: After the script has completed, you will find the generated `circle.png` file in the repository. To see the GitHub user circle, simply open the file.
+Next:
+
+![image](https://github.com/hooopo/oh-my-github-circles/assets/63877/28f90221-e463-4f44-8f35-4f4eaa2cbac1)
+
+
+
+4. **Manually trigger the first GitHub Action**: Go back to the "Actions" tab in your forked repository, choose the workflow you want to run, and click the "Run workflow" button to manually trigger it for the first time.
+
+![image](https://github.com/hooopo/oh-my-github-circles/assets/63877/d883ab0b-e9d6-40a7-a9a5-dd3ae87c58fc)
+
+
+5. **Get the image URL or copy the image**: Once the GitHub Action has been successfully executed, you can either get the image URL or copy the generated image directly.
+
+Follow these steps, and you'll successfully set up "Repo Contributor Circles" for your repository.
+
+## Special Thanks
+
+_Repo Contributor Circles_ was inspired by [**Chirpty**](https://chirpty.com/), a similar visualization project for Twitter profiles. We would also like to express our gratitude to the following projects and services that played a crucial role in the development and implementation of _Oh My GitHub Circles_:
+
+1. **repo-track-pipeline**: Our project depends on the [repo-track-pipeline](https://github.com/hooopo/repo-track-pipeline) which is responsible for processing and transforming the GitHub repo data.
+
+2. **GitHub Actions**: [GitHub Actions](https://github.com/features/actions) automates the entire workflow of our project, making it easy to build, test, and deploy the visualizations on demand.
+
+3. **TiDB Serverless**: We leverage [TiDB Serverless](https://tidbcloud.com/?utm_source=github_circles&utm_medium=github_circles&utm_campaign=github_circles) for seamless database management and highly efficient data handling, enabling a smooth user experience.
+
+
+## Related repos
+
+* [Oh My GitHub Circles](https://github.com/hooopo/oh-my-github-circles)
+* [Oh My GitHub Pipeline](https://github.com/hooopo/oh-my-github-pipeline)
+* [Repo Track Pipeline](https://github.com/hooopo/repo-track-pipeline)
+* [OSSInsight Lite](https://github.com/pingcap/ossinsight-lite)
+* [OSSInsight](https://github.com/pingcap/ossinsight)
+
 
 ## Contributing
 
