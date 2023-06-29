@@ -9,8 +9,20 @@ permissions:
   contents: write
 
 jobs:
+  github_repos_pipeline:
+    name: GitHub Repos Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: main
+        uses: hooopo/repo-track-pipeline@main
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          database-url: ${{ secrets.DATABASE_URL }}
+          repo-full-name: ${{ secrets.REPO_FULL_NAME }}
   run:
     name: Generate circle.png
+    needs: github_repos_pipeline
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
