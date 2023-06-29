@@ -46,7 +46,7 @@ function splitArray(input, groupSizes) {
 }
 
 async function main() {
-	const user = await getQueryResults('SELECT open_graph_image_url as avatar, name as screen_name FROM repos limit 1');
+	const user = await getQueryResults('SELECT owner_avatar_url as avatar, name as screen_name FROM repos limit 1');
 
 	// this is how many users we will have for each layer from the inside out
 	const layers = [8, 15, 26];
