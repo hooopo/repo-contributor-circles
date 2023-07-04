@@ -57,7 +57,7 @@ async function main() {
 	from pull_requests 
 		   join users on users.login = pull_requests.author 
 	where merged = 1 and author not like '%bot%'
-	group by users.login 
+	group by 1,2 
 	order by count(*) desc
 	limit 49
 	`;
